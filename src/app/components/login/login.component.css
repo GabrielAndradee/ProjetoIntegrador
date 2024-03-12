@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+  }
+  
+  .login {
+    text-align: center;
+    padding: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+  }
+
+  .login {
+    background-color: #3c865c;
+    color: rgb(255, 255, 255);
+  }
+
+  input {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 0.9px solid #ffffff;
+  }
+
+  .create-button {
+    background-color: hsl(146, 43%, 34%);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 0.9px solid;
+  }
+
+  .create-button:hover {
+    background-color: rgba(111, 173, 125, 0.5);
+  }
+
+  .imgs {
+    position: absolute;
+    width: 320px;
+    top: 420px;
+    object-fit: cover;
+    right: 1060px;
+  }

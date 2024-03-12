@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+}
+
+.login {
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.register {
+  padding: 150px;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+.login {
+  background-color: #317c51;
+  color: rgb(255, 255, 255);
+}
+
+.register {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.create-button {
+  background-color: hsl(146, 43%, 34%);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 0.9px solid;
+}
+
+.create-button:hover {
+  background-color: rgba(111, 173, 125, 0.5);
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 0.9px solid #000000;
+}
+
+.imgs {
+  position: absolute;
+  width: 320px;
+  top: 420px;
+  object-fit: cover;
+  right: 1060px;
+}
