@@ -1,7 +1,7 @@
 .container {
     display: flex;
   }
-  
+
   .login {
     text-align: center;
     padding: 200px;
@@ -43,4 +43,21 @@
     top: 420px;
     object-fit: cover;
     right: 1060px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .login {
+      padding: 30px;
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .imgs {
+      display: none;
+    }
   }

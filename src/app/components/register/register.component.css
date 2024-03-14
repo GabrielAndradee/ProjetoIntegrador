@@ -1,5 +1,7 @@
+/* Default styles */
 .container {
   display: flex;
+  justify-content: space-between; /* Space elements horizontally */
 }
 
 .login {
@@ -54,5 +56,21 @@ input {
   width: 320px;
   top: 420px;
   object-fit: cover;
-  right: 1060px;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .login,
+  .register {
+    padding: 30px;
+    border-radius: 0;
+  }
+
+  .imgs {
+    display: none;
+  }
 }
