@@ -1,0 +1,101 @@
+    <div class="container">
+        <h1>Ficha de Anamnese</h1>
+        <form id="anamneseForm2">
+            <label for="condicao_cronica">Você já foi diagnosticado com alguma condição médica crônica?</label>
+            <div>
+                <input type="radio" id="condicao_cronica_sim" name="condicao_cronica" value="sim">
+                <label for="condicao_cronica_sim">Sim</label>
+                <input type="radio" id="condicao_cronica_nao" name="condicao_cronica" value="nao" checked>
+                <label for="condicao_cronica_nao">Não</label>
+            </div>
+            <textarea id="condicao_cronica_info" name="condicao_cronica_info" placeholder="Especifique" style="display: none;"></textarea>
+
+            <!-- 2º tópico -->
+            <label for="cirurgia">Você já passou por alguma cirurgia no passado?</label>
+            <div>
+                <input type="radio" id="cirurgia_sim" name="cirurgia" value="sim">
+                <label for="cirurgia_sim">Sim</label>
+                <input type="radio" id="cirurgia_nao" name="cirurgia" value="nao" checked>
+                <label for="cirurgia_nao">Não</label>
+            </div>
+            <textarea id="cirurgia_info" name="cirurgia_info" placeholder="Especifique" style="display: none;"></textarea>
+
+            <!-- 3º tópico -->
+            <label for="hospitalizacao">Você já foi hospitalizado anteriormente?</label>
+            <div>
+                <input type="radio" id="hospitalizacao_sim" name="hospitalizacao" value="sim">
+                <label for="hospitalizacao_sim">Sim</label>
+                <input type="radio" id="hospitalizacao_nao" name="hospitalizacao" value="nao" checked>
+                <label for="hospitalizacao_nao">Não</label>
+            </div>
+            <textarea id="hospitalizacao_info" name="hospitalizacao_info" placeholder="Especifique o motivo" style="display: none;"></textarea>
+
+
+            <label for="alergia">Você tem alguma alergia?</label>
+            <div>
+                <input type="radio" id="alergia_sim" name="alergia" value="sim">
+                <label for="alergia_sim">Sim</label>
+                <input type="radio" id="alergia_nao" name="alergia" value="nao" checked>
+                <label for="alergia_nao">Não</label>
+            </div>
+            <textarea id="alergia_info" name="alergia_info" placeholder="Especifique" style="display: none;"></textarea>
+
+            <!-- 5º tópico -->
+            <label for="medicamento">Você faz uso de algum medicamento?</label>
+            <div>
+                <input type="radio" id="medicamento_sim" name="medicamento" value="sim">
+                <label for="medicamento_sim">Sim</label>
+                <input type="radio" id="medicamento_nao" name="medicamento" value="nao" checked>
+                <label for="medicamento_nao">Não</label>
+            </div>
+            <textarea id="medicamento_info" name="medicamento_info" placeholder="Especifique" style="display: none;"></textarea>
+
+            <!-- 6º tópico -->
+            <label for="saude_mental">Você já foi diagnosticado com algum problema de saúde mental?</label>
+            <div>
+                <input type="radio" id="saude_mental_sim" name="saude_mental" value="sim">
+                <label for="saude_mental_sim">Sim</label>
+                <input type="radio" id="saude_mental_nao" name="saude_mental" value="nao" checked>
+                <label for="saude_mental_nao">Não</label>
+            </div>
+            <textarea id="saude_mental_info" name="saude_mental_info" placeholder="Especifique" style="display: none;"></textarea>
+
+            <!-- 7º tópico -->
+            <label for="ciclo_menstrual">(MULHER) Forneça informações sobre ciclos menstruais ou gravidez.</label>
+            <div>
+                <input type="radio" id="ciclo_menstrual_sim" name="ciclo_menstrual" value="sim">
+                <label for="ciclo_menstrual_sim">Sim</label>
+                <input type="radio" id="ciclo_menstrual_nao" name="ciclo_menstrual" value="nao" checked>
+                <label for="ciclo_menstrual_nao">Não</label>
+            </div>
+            <textarea id="ciclo_menstrual_info" name="ciclo_menstrual_info" placeholder="Especifique" style="display: none;"></textarea>
+
+            <input type="submit" value="Continuar" routerLink="./ficha2" >
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("anamneseForm2").addEventListener("change", function(event) {
+            toggleTextArea("condicao_cronica_sim", "condicao_cronica_info");
+            toggleTextArea("cirurgia_sim", "cirurgia_info");
+            toggleTextArea("hospitalizacao_sim", "hospitalizacao_info");
+            toggleTextArea("alergia_sim", "alergia_info");
+            toggleTextArea("medicamento_sim", "medicamento_info");
+            toggleTextArea("saude_mental_sim", "saude_mental_info");
+            toggleTextArea("ciclo_menstrual_sim", "ciclo_menstrual_info");
+        });
+
+        function toggleTextArea(radioId, textAreaId) {
+            const textarea = document.getElementById(textAreaId);
+            const sim = document.getElementById(radioId);
+
+            if (sim.checked) {
+                textarea.style.display = "block";
+                textarea.setAttribute("required", "required");
+            } else {
+                textarea.style.display = "none";
+                textarea.removeAttribute("required");
+            }
+        }
+    </script>
+

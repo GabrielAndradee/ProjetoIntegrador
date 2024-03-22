@@ -1,0 +1,112 @@
+<div class="container">
+  <h1>Ficha de Anamnese</h1>
+  <form id="anamneseForm3">
+      <!-- 1º tópico -->
+      <label for="hipertensao">Você tem hipertensão?</label>
+      <div class="radio-group">
+          <input type="radio" id="hipertensao_sim" name="hipertensao" value="sim">
+          <label for="hipertensao_sim">Sim</label>
+          <input type="radio" id="hipertensao_nao" name="hipertensao" value="nao" checked>
+          <label for="hipertensao_nao">Não</label>
+      </div>
+      <textarea id="hipertensao_info" name="hipertensao_info" placeholder="Qual a classificação?" style="display: none;"></textarea>
+
+      <!-- 2º tópico -->
+      <label for="problema_cardiovascular">Você tem algum problema cardiovascular?</label>
+      <div class="radio-group">
+          <input type="radio" id="problema_cardiovascular_sim" name="problema_cardiovascular" value="sim">
+          <label for="problema_cardiovascular_sim">Sim</label>
+          <input type="radio" id="problema_cardiovascular_nao" name="problema_cardiovascular" value="nao" checked>
+          <label for="problema_cardiovascular_nao">Não</label>
+      </div>
+      <textarea id="problema_cardiovascular_info" name="problema_cardiovascular_info" placeholder="Especifique" style="display: none;"></textarea>
+
+      <!-- 3º tópico -->
+      <label for="diabetes">Você tem diabetes?</label>
+      <div class="radio-group">
+          <input type="radio" id="diabetes_sim" name="diabetes" value="sim">
+          <label for="diabetes_sim">Sim</label>
+          <input type="radio" id="diabetes_nao" name="diabetes" value="nao" checked>
+          <label for="diabetes_nao">Não</label>
+      </div>
+      <textarea id="diabetes_info" name="diabetes_info" placeholder="Qual o tipo?" style="display: none;"></textarea>
+
+      <!-- 4º tópico -->
+      <label for="cancer">Você tem ou já teve câncer?</label>
+      <div class="radio-group">
+          <input type="radio" id="cancer_sim" name="cancer" value="sim">
+          <label for="cancer_sim">Sim</label>
+          <input type="radio" id="cancer_nao" name="cancer" value="nao" checked>
+          <label for="cancer_nao">Não</label>
+      </div>
+      <textarea id="cancer_info" name="cancer_info" placeholder="Especifique" style="display: none;"></textarea>
+
+      <!-- 5º tópico -->
+      <label for="historico_familiar_cardiovascular">Você tem algum histórico familiar com problema cardiovascular?</label>
+      <div class="radio-group">
+          <input type="radio" id="historico_familiar_cardiovascular_sim" name="historico_familiar_cardiovascular" value="sim">
+          <label for="historico_familiar_cardiovascular_sim">Sim</label>
+          <input type="radio" id="historico_familiar_cardiovascular_nao" name="historico_familiar_cardiovascular" value="nao" checked>
+          <label for="historico_familiar_cardiovascular_nao">Não</label>
+      </div>
+      <textarea id="historico_familiar_cardiovascular_info" name="historico_familiar_cardiovascular_info" placeholder="Qual o grau de parentesco?" style="display: none;"></textarea>
+
+      <!-- 6º tópico -->
+      <label for="historico_fumante">Você já fumou no passado ou é fumante atualmente?</label>
+      <div class="radio-group">
+          <input type="radio" id="historico_fumante_sim" name="historico_fumante" value="sim">
+          <label for="historico_fumante_sim">Sim</label>
+          <input type="radio" id="historico_fumante_nao" name="historico_fumante" value="nao" checked>
+          <label for="historico_fumante_nao">Não</label>
+      </div>
+      <textarea id="historico_fumante_info" name="historico_fumante_info" placeholder="Espifique o tempo" style="display: none;"></textarea>
+
+      <!-- 7º tópico -->
+      <label for="historico_familiar_diabetes">Você tem algum histórico familiar com problema de diabetes?</label>
+      <div class="radio-group">
+          <input type="radio" id="historico_familiar_diabetes_sim" name="historico_familiar_diabetes" value="sim">
+          <label for="historico_familiar_diabetes_sim">Sim</label>
+          <input type="radio" id="historico_familiar_diabetes_nao" name="historico_familiar_diabetes" value="nao" checked>
+          <label for="historico_familiar_diabetes_nao">Não</label>
+      </div>
+      <textarea id="historico_familiar_diabetes_info" name="historico_familiar_diabetes_info" placeholder="Qual o grau de parentesco?" style="display: none;"></textarea>
+
+      <!-- 8º tópico -->
+      <label for="consumo_alcool">Você consome álcool regularmente ou já teve um histórico de consumo no passado?</label>
+      <div class="radio-group">
+          <input type="radio" id="consumo_alcool_sim" name="consumo_alcool" value="sim">
+          <label for="consumo_alcool_sim">Sim</label>
+          <input type="radio" id="consumo_alcool_nao" name="consumo_alcool" value="nao" checked>
+          <label for="consumo_alcool_nao">Não</label>
+      </div>
+      <textarea id="consumo_alcool_info" name="consumo_alcool_info" placeholder="Especifique" style="display: none;"></textarea>
+
+      <input type="submit" value="Enviar">
+  </form>
+</div>
+
+<script>
+  document.getElementById("anamneseForm3").addEventListener("change", function(event) {
+      toggleTextArea("hipertensao_sim", "hipertensao_info");
+      toggleTextArea("problema_cardiovascular_sim", "problema_cardiovascular_info");
+      toggleTextArea("diabetes_sim", "diabetes_info");
+      toggleTextArea("cancer_sim", "cancer_info");
+      toggleTextArea("historico_familiar_cardiovascular_sim", "historico_familiar_cardiovascular_info");
+      toggleTextArea("historico_fumante_sim", "historico_fumante_info");
+      toggleTextArea("historico_familiar_diabetes_sim", "historico_familiar_diabetes_info");
+      toggleTextArea("consumo_alcool_sim", "consumo_alcool_info");
+  });
+
+  function toggleTextArea(radioId, textAreaId) {
+      const textarea = document.getElementById(textAreaId);
+      const sim = document.getElementById(radioId);
+
+      if (sim.checked) {
+          textarea.style.display = "block";
+          textarea.setAttribute("required", "required");
+      } else {
+          textarea.style.display = "none";
+          textarea.removeAttribute("required");
+      }
+  }
+</script>
